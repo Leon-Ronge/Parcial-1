@@ -1,0 +1,309 @@
+﻿/* --- Reset básico para limpiar márgenes por defecto --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Fondo de la página y centrado --- */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+/* --- Formulario principal --- */
+#form1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Tarjeta central (El div principal) --- */
+.contenedor {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* --- Títulos --- */
+.cabecera {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.cabecera h1 {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.cabecera h2 {
+    font-size: 2.2rem;
+    color: #ff6b2b;
+    font-weight: 700;
+    margin: 0;
+}
+
+.formulario {
+    width: 100%;
+    max-width: 420px; 
+    margin: 0 auto;  
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Grupo de formulario --- */
+.grupo-form {
+    display: flex;
+    flex-direction: row; /* Fuerza a que estén uno al lado del otro */
+    justify-content: space-between; /* Tira el label a la izq y el input a la der */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.grupo-form label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+    text-align: left; /* Asegura que el texto se pegue a la izquierda */
+    flex: 0 0 35%;    /* El label ocupa exactamente el 35% del espacio */
+}
+/* --- Inputs y TextBox --- */
+.input-form {
+    flex: 0 0 60%;    /* El input ocupa el 60% del espacio restante a la derecha */
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    color: #333;
+    box-sizing: border-box; /* Fundamental para que los bordes no desarmen la caja */
+}
+
+.input-form:focus {
+    outline: none;
+    border-color: #ff6b2b;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 107, 43, 0.3);
+}
+
+.input-form::placeholder {
+    color: #ccc;
+}
+
+/* --- DropDownList (Select) --- */
+select.input-form {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1.2em;
+    padding-right: 40px;
+}
+
+select.input-form::-ms-expand {
+    display: none;
+}
+
+/* --- Acciones del formulario --- */
+.acciones-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- Botones --- */
+.btn-form {
+    width: 100%; /* Hacemos que el botón ocupe todo el ancho inferior, da un look muy profesional */
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: inherit;
+}
+
+.btn-form.confirmar {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-form.confirmar:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+}
+
+.btn-form.cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-form.cancelar:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-form.neutral {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-form.neutral:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(149, 165, 166, 0.3);
+}
+
+/* --- Mensaje de feedback --- */
+.mensaje-feedback {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    min-height: 20px;
+    margin-top: 10px;
+}
+
+.mensaje-feedback.exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje-feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.mensaje-feedback.advertencia {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* --- Navegación --- */
+.navegacion-volver {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.enlace-volver {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.enlace-volver:hover {
+    color: #ff6b2b;
+    text-decoration: underline;
+}
+
+/* --- Menú principal --- */
+.menu-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-menu {
+    display: block;
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-menu:hover {
+    background-color: #ff6b2b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 107, 43, 0.3);
+}
+
+/* --- Tabla de datos mejorada --- */
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-datos thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.tabla-datos th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.tabla-datos td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-datos tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    .cabecera h2 {
+        font-size: 1.8rem;
+    }
+
+    .input-form {
+        padding: 10px 12px;
+        font-size: 16px; /* Previene zoom en mobile */
+    }
+
+    .btn-form {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+}

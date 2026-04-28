@@ -17,6 +17,14 @@ namespace Parcial_1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            // validacion campo vacio
+            if (string.IsNullOrWhiteSpace(this.TextBox1.Text))
+            {
+                this.Label1.Text = "Por favor, ingrese el nombre del producto.";
+                this.Label1.CssClass = "mensaje-feedback error";
+                return;
+            }
+
             this.SqlDataSource2.DataSourceMode = SqlDataSourceMode.DataReader;
 
             SqlDataReader dato = (SqlDataReader)this.SqlDataSource2.Select(DataSourceSelectArguments.Empty);

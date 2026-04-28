@@ -12,21 +12,12 @@ html, body {
     height: 100%;
 }
 
-body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    margin: 0;
-}
+body { background: #555; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; margin: 0; position: relative; overflow-x: hidden; }
 
-/* --- Formulario principal --- */
+/* Asegurarse de que el contenedor esté por encima del patrón */
 #form1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
 /* --- Tarjeta central (El div principal) --- */
